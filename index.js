@@ -5,9 +5,18 @@ const fs = require('fs');
 
 app.get('/', function(req, res) {
 
-    res.send('<h3>Hello Node on Heroku</h3>');
+    //res.send('<h3>Hello Node on Heroku</h3>');
+    res.sendFile('/angular.html', { root: __dirname });
+
 
 });
+
+app.get('/user', function(req, res) {
+
+    res.sendFile('/user.json', { root: __dirname });
+
+});
+
 
 app.get('/about', function(req, res) {
 
